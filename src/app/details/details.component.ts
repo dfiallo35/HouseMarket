@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { HousingService } from '../housing.service';
-import { HousingLocation } from '../housing-location';
+import { HousingTempService } from '../services/housing-temp.service';
+import { HousingLocation } from '../services/housing-location';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
@@ -45,7 +45,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 })
 export class DetailsComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
-  housingService: HousingService = inject(HousingService);
+  housingService: HousingTempService = inject(HousingTempService);
   housingLocation?: HousingLocation;
   applyForm = new FormGroup({
     firstName: new FormControl(''),
